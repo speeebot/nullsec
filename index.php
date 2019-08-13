@@ -21,42 +21,51 @@ if (!isset($_SESSION['id'])) {
   <title>NULLSEC</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<a href="index.php" class="logo">
-  <img src="img/logo.png"></a>
-
+<!-- username tag -->
+<h2 class="username">
+  <?php echo $_SESSION['username']; 
+    if ($_SESSION['verified']): ?>
+      <p> VERIFIED</p>
+  <?php endif; ?>
+</h2>
+<!-- container for logo and everything below -->
   <div class="container">
-    <div class="row">
-      <?php if (isset($_SESSION['message'])): ?>
-        <div class="alert" <?php echo $_SESSION['alert-class']; ?>">
-          <?php 
-            echo $_SESSION['message']; 
-            unset($_SESSION['message']); 
-            unset($_SESSION['alert-class']); 
-          ?>
+    <div class="header"> <!-- header includes logo and navigation row with nav links -->
+      <a href="#" class="logo">
+      <img src="img/logo.gif"></a>
+    
+      <div class="navigation">
+        <a class="nav-link" href="index.php">Front</a>
+        <a class="nav-link" href="media.php">Media</a>
+        <a class="nav-link" href="info.php">Info</a>
+        <a class="nav-link" href="downloads.php">Downloads</a>
+        <a class="nav-link" href="https://nullsec.gg/forums/">Forums</a>
+        <a class="nav-link" href="index.php?logout=1">Logout</a>
+      </div>
+    </div>
 
-        </div>
+      <div class="alerts">
+        <?php if (isset($_SESSION['message'])): ?>
+          <p class="logged-alert" <?php echo $_SESSION['alert-class']; ?>> 
+            <?php echo $_SESSION['message']; 
+              unset($_SESSION['message']); 
+              unset($_SESSION['alert-class']); ?>
+          </p>
         <?php endif; ?>
 
-        <h3 class="username"><?php echo $_SESSION['username']; ?>
-          <a class="logout" href="index.php?logout=1">Logout</a>
-        </h3>
-
         <?php if (!$_SESSION['verified']): ?>
-          <div class="email-sent">
+          <div class="email-alert">
             You need to verify your account.
             An email has been sent to
             <strong><?php echo $_SESSION['email']; ?></strong>
           </div>
         <?php endif; ?>
-
-        <?php if ($_SESSION['verified']): ?>
-          <button class="btn btn-block btn-lg btn-primary">VERIFIED</button>
-        <?php endif; ?>
-    </div>
+      </div>
+      <div> 
+  <div class="info">
+    <h1><!-- info goes in here --></a> </h1>
   </div>
 
 </body>
-
 </html>
