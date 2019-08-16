@@ -20,13 +20,14 @@ if (!isset($_SESSION['id'])) {
   <meta charset="UTF-8">
   <title>NULLSEC</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon/" href="favicon.ico">
 </head>
 <body>
 <!-- username tag -->
 <h2 class="username">
   <?php echo $_SESSION['username']; 
     if ($_SESSION['verified']): ?>
-      <p> VERIFIED</p>
+      <h2 class="verified">VERIFIED</h2>
   <?php endif; ?>
 </h2>
 <!-- container for logo and everything below -->
@@ -40,6 +41,7 @@ if (!isset($_SESSION['id'])) {
         <a class="nav-link" href="media.php">Media</a>
         <a class="nav-link" href="info.php">Info</a>
         <a class="nav-link" href="downloads.php">Downloads</a>
+        <a class="nav-link" href="invite.php">Invite</a>
         <a class="nav-link" href="https://nullsec.gg/forums/">Forums</a>
         <a class="nav-link" href="index.php?logout=1">Logout</a>
       </div>

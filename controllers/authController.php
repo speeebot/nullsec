@@ -50,7 +50,8 @@ if (isset($_POST['signup-btn'])) {
     $token = bin2hex(random_bytes(50));
     $verified = false;
 
-    $sql = "INSERT INTO users (username, email, verified, token, password) VALUES (?, ?, ?, ?, ?)";
+
+    $sql = "UPDATE users SET username=?, email=?, verified=?, token=?, password=? WHERE inviteToken='$_SESSION[inviteToken]'";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssdss', $username, $email, $verified, $token, $password);
     
@@ -72,10 +73,7 @@ if (isset($_POST['signup-btn'])) {
     } else {
       $errors['db_error'] = "Database error: failed to register";
     }
-
   }
-
-
 }
 
 //if user clicks the login button
@@ -153,6 +151,74 @@ function verifyUser($token)
       $_SESSION['message'] = "Your email address was successfully verified.";
       $_SESSION['alert-class'] = "alert-success";
       header('location: index.php');
+      exit();
+    }
+  } else {
+    echo 'User not found';
+  }
+}
+
+//if user clicks on the invite button
+if (isset($_POST['invite-btn'])) {
+  $inviteEmail = $_POST['email']; 
+  
+  //validation
+  if (empty($inviteEmail)) {
+    $errors['email'] = "E-mail required.";
+  }
+
+  $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1";
+  $stmt = $conn->prepare($emailQuery);
+  $stmt->bind_param('s', $inviteEmail);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $userCount = $result->num_rows;
+  $stmt->close();
+
+  if ($userCount > 0) {
+    $errors['email'] = "E-mail already exists.";
+  }
+
+  if (count($errors) === 0) {
+    $inviteToken = bin2hex(random_bytes(50));
+
+    $sql = "INSERT INTO users (inviteToken) VALUES (?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $inviteToken);
+
+    if ($stmt->execute()) {
+
+    sendInviteEmail($inviteEmail, $inviteToken);
+
+    //set flash message
+    $_SESSION['message'] = "Invite sent to " . $inviteEmail;
+    $_SESSION['alert-class'] = "alert-success";
+    header('location: invite.php');
+    exit();
+  } else {
+    $errors['db_error'] = "Database error: failed to send invite";
+   }
+  }
+}
+
+
+//verify the invite token to access registration
+function verifyInvite($inviteToken)
+{
+  global $conn;
+  $sql = "SELECT * FROM users WHERE inviteToken='$inviteToken' LIMIT 1";
+  $result = mysqli_query($conn, $sql);
+
+
+  if (mysqli_num_rows($result) > 0){
+    $user = mysqli_fetch_assoc($result);
+    $update_query = "UPDATE users SET inviteVerified=1 WHERE inviteToken='$inviteToken'";
+
+    if (mysqli_query($conn, $update_query)) {
+      $user['inviteToken'] = $inviteToken;
+      $_SESSION['inviteVerified'] = 1;
+      $user['inviteVerified'] = 1;
+      header('location: signup.php');
       exit();
     }
   } else {

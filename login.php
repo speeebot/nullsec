@@ -40,9 +40,9 @@ if (isset($_SESSION['id'])) {
       </div>
           <?php endif; ?>
           
-      <div class="form-dir">
+<!--       <div class="form-dir">
         <p>Not a member?<a href="signup.php"> Register</a></p> 
-      </div>
+      </div> -->
   </form>
 </div>
 

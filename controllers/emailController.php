@@ -26,8 +26,8 @@ function sendVerificationEmail($userEmail, $token)
     <div class="wrapper">
         <img src="cid:img/logoEmail.png">
             <p>
-                Welcome to NULLSEC. Click the link to 
-                <a href="http://nullsec.gg/index.php?token=' . $token . '">
+                Click the link to 
+                <a href="localhost/nullsec/index.php?token=' . $token . '">
                 verify your email address.</a>
             </p>
     </div>
@@ -37,6 +37,40 @@ function sendVerificationEmail($userEmail, $token)
 
         // Create a message
     $message = (new Swift_Message('Verify your email address'))
+        ->setFrom(EMAIL)
+        ->setTo($userEmail)
+        ->setBody($body, 'text/html')
+        ;
+
+    // Send the message
+    $result = $mailer->send($message);
+}
+
+function sendInviteEmail($userEmail, $inviteToken)
+{
+    global $mailer;
+
+    $body = '<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="cid:img/logoEmail.png">
+            <p>
+                Welcome to NULLSEC. Click the link to 
+                <a href="localhost/nullsec/signup.php?invitetoken=' . $inviteToken . '">
+                register.</a>
+            </p>
+    </div>
+    
+</body>
+</html>';
+
+        // Create a message
+    $message = (new Swift_Message('Welcome to NULLSEC'))
         ->setFrom(EMAIL)
         ->setTo($userEmail)
         ->setBody($body, 'text/html')

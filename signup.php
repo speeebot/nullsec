@@ -1,5 +1,15 @@
 <?php require_once 'controllers/authController.php'; 
 
+if (isset($_GET['invitetoken'])) {
+  $inviteToken = $_GET['invitetoken'];
+  $_SESSION['inviteToken'] = $inviteToken;
+  verifyInvite($inviteToken);
+}
+if ($_SESSION['inviteVerified'] < 1) {
+  header('location: index.php');
+  exit();
+}
+
 if (isset($_SESSION['id'])) {
   header('location: index.php');
   exit();
