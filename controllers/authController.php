@@ -41,8 +41,16 @@ if (isset($_POST['signup-btn'])) {
   $userCount = $result->num_rows;
   $stmt->close();
 
+  $tokenQuery = "SELECT * FROM users WHERE inviteToken=? LIMIT 1";
+  $stmt = $conn->prepare($tokenQuery);
+  $stmt->bind_param('s', $_SESSION['inviteToken']);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $userCount = $result->num_rows;
+  $stmt->close();
+
   if ($userCount > 0) {
-    $errors['email'] = "E-mail already exists.";
+    $errors['inviteToken'] = "This invite has already been used.";
   }
 
   if (count($errors) === 0) {
