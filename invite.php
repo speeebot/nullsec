@@ -37,7 +37,7 @@ if (!isset($_SESSION['id'])) {
   </div>
     <form class="form" action="invite.php" method="post">
       <div class="form-group">
-        <input type="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>">
+        <input type="email" name="inviteEmail" placeholder="E-mail" value="<?php echo $inviteEmail; ?>">
         <button type="submit" name="invite-btn" class="btn">Send</button>
       </div>
       <?php if(count($errors) > 0): ?>

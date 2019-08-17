@@ -8,6 +8,7 @@ require_once 'emailController.php';
 $errors = array();
 $username = "";
 $email = "";
+$inviteEmail = "";
 
 //if user clicks on the sign up button
 if (isset($_POST['signup-btn'])) {
@@ -41,7 +42,11 @@ if (isset($_POST['signup-btn'])) {
   $userCount = $result->num_rows;
   $stmt->close();
 
-  $tokenQuery = "SELECT * FROM users WHERE inviteToken=? LIMIT 1";
+  if ($userCount > 0) {
+    $errors['email'] = "This E-mail already exists.";
+  }
+
+  $tokenQuery = "SELECT * FROM users WHERE inviteToken=? AND verified=1 LIMIT 1";
   $stmt = $conn->prepare($tokenQuery);
   $stmt->bind_param('s', $_SESSION['inviteToken']);
   $stmt->execute();
@@ -168,11 +173,11 @@ function verifyUser($token)
 
 //if user clicks on the invite button
 if (isset($_POST['invite-btn'])) {
-  $inviteEmail = $_POST['email']; 
+  $inviteEmail = $_POST['inviteEmail']; 
   
   //validation
   if (empty($inviteEmail)) {
-    $errors['email'] = "E-mail required.";
+    $errors['inviteEmail'] = "E-mail required.";
   }
 
   $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1";
@@ -184,7 +189,7 @@ if (isset($_POST['invite-btn'])) {
   $stmt->close();
 
   if ($userCount > 0) {
-    $errors['email'] = "E-mail already exists.";
+    $errors['inviteEmail'] = "E-mail already exists.";
   }
 
   if (count($errors) === 0) {
