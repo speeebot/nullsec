@@ -22,8 +22,10 @@ if (isset($_SESSION['id'])) {
 <!-- container for logo and everything below -->
 <div class="container">
   <div class="header"> <!-- header includes logo and navigation row with nav links -->
-    <a href="#" class="logo">
-    <img src="img/logo.gif"></a>
+    <a href="login.php" class="logo">
+      <img src="img/nullsecNew_title.jpg">
+    </a>
+    <br><br><br>
   </div>
 
   <form class="form" action="login.php" method="post">

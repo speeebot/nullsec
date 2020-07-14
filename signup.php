@@ -9,7 +9,6 @@ if ($_SESSION['inviteVerified'] < 1) {
   header('location: index.php');
   exit();
 }
-
 if (isset($_SESSION['id'])) {
   header('location: index.php');
   exit();
@@ -34,7 +33,9 @@ if (isset($_SESSION['id'])) {
 <div class="container">
   <div class="header"> <!-- header includes logo and navigation row with nav links -->
     <a href="index.php" class="logo">
-    <img src="img/logo.gif"></a>
+      <img src="img/nullsecNew_title.jpg">
+    </a>
+    <br><br><br>
   </div>
     <form class="form" action="signup.php" method="post">
       <div class="form-group">

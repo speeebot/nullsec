@@ -26,16 +26,17 @@ if (!isset($_SESSION['id'])) {
 <!-- container for logo and everything below -->
   <div class="container">
     <div class="header"> <!-- header includes logo and navigation row with nav links -->
-      <a href="#" class="logo">
-      <img src="img/logo.gif"></a>
-
+      <a href="index.php" class="logo">
+        <img src="img/nullsecNew_title.jpg">
+      </a>
+      <br><br><br>
       <div class="navigation">
         <a class="nav-link" href="index.php">Front</a>
         <a class="nav-link" href="media.php">Media</a>
         <a class="nav-link" href="info.php">Info</a>
         <a class="nav-link" href="downloads.php">Downloads</a>
         <a class="nav-link" href="invite.php">Invite</a>
-        <a class="nav-link" href="https://nullsec.gg/forums/">Forums</a>
+        <a class="nav-link" href="https://forums.nullsec.gg/">Forums</a>
         <a class="nav-link" href="index.php?logout=1">Logout</a>
       </div>
     </div>

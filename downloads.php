@@ -27,7 +27,9 @@ if (!isset($_SESSION['id'])) {
 <div class="container">
     <div class="header"> <!-- header includes logo and navigation row with nav links -->
       <a href="#" class="logo">
-      <img src="img/logo.gif"></a>
+        <img src="img/nullsecNew_title.jpg">
+      </a>
+      <br><br><br>
 
       <div class="navigation">
         <a class="nav-link" href="index.php">Front</a>
@@ -35,7 +37,7 @@ if (!isset($_SESSION['id'])) {
         <a class="nav-link" href="info.php">Info</a>
         <a class="nav-link" href="downloads.php">Downloads</a>
         <a class="nav-link" href="invite.php">Invite</a>
-        <a class="nav-link" href="https://nullsec.gg/forums/">Forums</a>
+        <a class="nav-link" href="https://forums.nullsec.gg/">Forums</a>
         <a class="nav-link" href="index.php?logout=1">Logout</a>
       </div>
     </div>

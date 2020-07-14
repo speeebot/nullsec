@@ -1,81 +1,76 @@
 <?php
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-require_once 'vendor/autoload.php';
+// Load Composer's autoloader
+require 'vendor/autoload.php';
 require_once 'config/constants.php';
 
-// Create the Transport
-$transport = (new Swift_SmtpTransport('giow1004.siteground.us', 465, 'ssl'))
-  ->setUsername(EMAIL)
-  ->setPassword(PASSWORD);
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
 
-// Create the Mailer using your created Transport
-$mailer = new Swift_Mailer($transport);
+try {
+    //Server settings
+    $mail->SMTPDebug = 1;                     // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'nullsec.gg';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = EMAIL;                     // SMTP username
+    $mail->Password   = PASSWORD;                               // SMTP password
+    $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
-
-function sendVerificationEmail($userEmail, $token)
-{
-    global $mailer;
-
-    $body = '<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <div class="wrapper">
-        <img src="cid:img/logoEmail.png">
-            <p>
-                Click the link to 
-                <a href="localhost/nullsec/index.php?token=' . $token . '">
-                verify your email address.</a>
-            </p>
-    </div>
-    
-</body>
-</html>';
-
-        // Create a message
-    $message = (new Swift_Message('Verify your email address'))
-        ->setFrom(EMAIL)
-        ->setTo($userEmail)
-        ->setBody($body, 'text/html')
-        ;
-
-    // Send the message
-    $result = $mailer->send($message);
-}
 
 function sendInviteEmail($userEmail, $inviteToken)
 {
-    global $mailer;
+    global $mail;
 
-    $body = '<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <div class="wrapper">
-        <img src="cid:img/logoEmail.png">
-            <p>
-                Welcome to NULLSEC. Click the link to 
-                <a href="localhost/nullsec/signup.php?invitetoken=' . $inviteToken . '">
-                register.</a>
-            </p>
-    </div>
-    
-</body>
-</html>';
+    //Recipients
+    $mail->setFrom('noreply@nullsec.gg', 'NULLSEC');   
+    $mail->addAddress($userEmail);               // Add a recipient
+    $mail->AddEmbeddedImage('img/logoEmailNew.jpg', 'logo_email');
 
-        // Create a message
-    $message = (new Swift_Message('Welcome to NULLSEC'))
-        ->setFrom(EMAIL)
-        ->setTo($userEmail)
-        ->setBody($body, 'text/html')
-        ;
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Welcome to NULLSEC';
+    $mail->Body    = '<div class="wrapper">
+                        <img src="cid:logo_email">
+                            <p>
+                                Welcome to NULLSEC. Click the link to 
+                                <a href="https://nullsec.gg/signup.php?invitetoken=' . $inviteToken . '">
+                                register.</a>
+                            </p>
+                    </div>';
 
-    // Send the message
-    $result = $mailer->send($message);
+    $mail->Send();
+}
+
+function sendVerificationEmail($userEmail, $token)
+{
+    global $mail;
+
+    //Recipients
+    $mail->setFrom('noreply@nullsec.gg', 'NULLSEC');   
+    $mail->addAddress($userEmail);               // Add a recipient
+    $mail->AddEmbeddedImage('img/logoEmailNew.jpg', 'logo_email');
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Verify your email address';
+    $mail->Body    = '<div class="wrapper">
+                        <img src="cid:logo_email">
+                            <p>
+                                Click the link to 
+                                <a href="https://nullsec.gg/index.php?token=' . $token . '">
+                                verify your email address.</a>
+                            </p>
+                    </div>';
+                    
+    $mail->send();
+}
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

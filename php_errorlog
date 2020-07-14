@@ -1,0 +1,124 @@
+[21-Jun-2020 06:18:36 CST6CDT] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/customer/www/nullsec.gg/public_html/signup.php on line 20
+[21-Jun-2020 06:18:38 CST6CDT] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/customer/www/nullsec.gg/public_html/signup.php on line 20
+[21-Jun-2020 06:39:54 CST6CDT] PHP Parse error:  syntax error, unexpected '{' in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 18
+[21-Jun-2020 06:39:57 CST6CDT] PHP Parse error:  syntax error, unexpected '{' in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 18
+[21-Jun-2020 08:34:45 CST6CDT] PHP Parse error:  syntax error, unexpected ')' in /home/customer/www/nullsec.gg/public_html/index.php on line 15
+[21-Jun-2020 08:36:18 CST6CDT] PHP Parse error:  syntax error, unexpected ')' in /home/customer/www/nullsec.gg/public_html/index.php on line 15
+[26-Jun-2020 09:30:29 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 17
+[26-Jun-2020 09:30:35 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 17
+[26-Jun-2020 09:30:43 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 17
+[26-Jun-2020 09:31:05 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 17
+[26-Jun-2020 09:31:06 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 17
+[26-Jun-2020 09:31:55 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 22
+[26-Jun-2020 09:31:57 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 22
+[26-Jun-2020 09:32:02 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 22
+[26-Jun-2020 09:32:24 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 21
+[26-Jun-2020 09:33:29 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function getMessage() on null in /home/customer/www/nullsec.gg/public_html/invite.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/invite.php on line 21
+[26-Jun-2020 10:48:40 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/invite.php(1): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:48:43 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/invite.php(1): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:48:45 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/invite.php(1): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:48:47 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/index.php(3): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:48:48 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/index.php(3): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:52:01 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/index.php(3): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:52:02 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/index.php(3): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:52:05 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/index.php(3): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:55:33 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/index.php(3): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:55:35 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/index.php(3): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:55:38 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/index.php(3): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 10:55:42 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php:13
+Stack trace:
+#0 /home/customer/www/nullsec.gg/public_html/controllers/authController.php(6): require_once()
+#1 /home/customer/www/nullsec.gg/public_html/index.php(3): require_once('/home/customer/...')
+#2 {main}
+  thrown in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 13
+[26-Jun-2020 13:14:48 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 78
+[26-Jun-2020 13:15:27 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 78
+[26-Jun-2020 13:15:28 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 78
+[26-Jun-2020 13:15:29 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 78
+[26-Jun-2020 13:15:29 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 78
+[26-Jun-2020 13:15:31 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/customer/www/nullsec.gg/public_html/controllers/emailController.php on line 78

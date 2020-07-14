@@ -180,7 +180,7 @@ if (isset($_POST['invite-btn'])) {
     $errors['inviteEmail'] = "E-mail required.";
   }
 
-  $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1";
+  $emailQuery = "SELECT * FROM users WHERE email=? LIMIT 1"; //check if email already in database.
   $stmt = $conn->prepare($emailQuery);
   $stmt->bind_param('s', $inviteEmail);
   $stmt->execute();
