@@ -14,8 +14,8 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = 1;                     // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
+    $mail->SMTPDebug = 0;                     // Enable verbose debug output
+    $mail->isSMTP();                                          // Send using SMTP
     $mail->Host       = 'nullsec.gg';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = EMAIL;                     // SMTP username

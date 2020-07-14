@@ -12,31 +12,33 @@ if (!isset($_SESSION['id'])) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NULLSEC</title>
+  <title>Info :: NULLSEC.gg</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- username tag -->
-<h2 class="username">
-  <?php echo $_SESSION['username'];
-    if ($_SESSION['verified']): ?>
-      <h2 class="verified">VERIFIED</h2>
-  <?php endif; ?>
-</h2>
+<div class="status">
+  <h2 class="status-username">
+    <?php echo $_SESSION['username']; 
+      if ($_SESSION['verified']): ?>
+        <h2 class="status-verified">VERIFIED</h2>
+    <?php endif; ?>
+  </h2>
+</div>
 <!-- container for logo and everything below -->
   <div class="container">
     <div class="header"> <!-- header includes logo and navigation row with nav links -->
       <a href="index.php" class="logo">
         <img src="img/nullsecNew_title.jpg">
       </a>
-    <br><br><br>
-
       <div class="navigation">
         <a class="nav-link" href="index.php">Front</a>
         <a class="nav-link" href="media.php">Media</a>
         <a class="nav-link" href="info.php">Info</a>
         <a class="nav-link" href="downloads.php">Downloads</a>
-        <a class="nav-link" href="invite.php">Invite</a>
+        <?php if($_SESSION['verified'] == 1):?>
+          <a class="nav-link" href="invite.php" title="Do not invite fuckheads please.">Invite</a>
+        <?php endif; ?>
         <a class="nav-link" href="https://forums.nullsec.gg/">Forums</a>
         <a class="nav-link" href="index.php?logout=1">Logout</a>
       </div>
@@ -56,12 +58,18 @@ if (!isset($_SESSION['id'])) {
             You need to verify your account.
             An email has been sent to
             <strong><?php echo $_SESSION['email']; ?></strong>
+            <br>
+            <?php if (isset($_SESSION['resent']) && !$_SESSION['resent'] == 1 ): ?>
+              <form class="form" action="index.php" method="post">
+                <button type=submit name="resend-btn">Resend</button>
+              </form>
+            <?php endif; ?>
           </div>
         <?php endif; ?>
     </div>
 
     <div class="info">
-      <h1><a href="https://discord.gg/CPPZyQq">Discord</a> </h1>
+      <!-- <h1><a href="https://discord.gg/CPPZyQq">Discord</a> </h1> -->
     </div>
 </div>
 

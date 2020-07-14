@@ -19,7 +19,7 @@ if (isset($_SESSION['id'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>Register :: NULLSEC.gg</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,7 +34,6 @@ if (isset($_SESSION['id'])) {
     <a href="index.php" class="logo">
       <img src="img/nullsecNew_title.jpg">
     </a>
-    <br><br><br>
   </div>
     <form class="form" action="signup.php" method="post">
       <div class="form-group">

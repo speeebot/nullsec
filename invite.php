@@ -5,38 +5,45 @@ if (!isset($_SESSION['id'])) {
   exit();
 }
 
+if (!$_SESSION['verified'] == 1) {
+  header('location: index.php');
+  exit();
+}
+
 ?>
   
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Invite</title>
+    <title>Invite :: NULLSEC.gg</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 <!-- username tag -->
-<h2 class="username">
-  <?php echo $_SESSION['username']; 
-    if ($_SESSION['verified']): ?>
-      <h2 class="verified">VERIFIED</h2>
-  <?php endif; ?>
-</h2>
-
+<div class="status">
+  <h2 class="status-username">
+    <?php echo $_SESSION['username']; 
+      if ($_SESSION['verified']): ?>
+        <h2 class="status-verified">VERIFIED</h2>
+    <?php endif; ?>
+  </h2>
+</div>
 <!-- container for logo and everything below -->
 <div class="container">
   <div class="header"> <!-- header includes logo and navigation row with nav links -->
     <a href="index.php" class="logo">
       <img src="img/nullsecNew_title.jpg">
     </a>
-    <br><br><br>
       <div class="navigation">
           <a class="nav-link" href="index.php">Front</a>
           <a class="nav-link" href="media.php">Media</a>
           <a class="nav-link" href="info.php">Info</a>
           <a class="nav-link" href="downloads.php">Downloads</a>
-          <a class="nav-link" href="invite.php">Invite</a>
+          <?php if($_SESSION['verified'] == 1):?>
+            <a class="nav-link" href="invite.php" title="Do not invite fuckheads please.">Invite</a>
+          <?php endif; ?>
           <a class="nav-link" href="https://forums.nullsec.gg/">Forums</a>
           <a class="nav-link" href="index.php?logout=1">Logout</a>
         </div>

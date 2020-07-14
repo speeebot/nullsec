@@ -10,7 +10,7 @@ if (isset($_SESSION['id'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NULLSEC</title>
+    <title>NULLSEC.gg</title>
     <link rel="stylesheet" href="style.css">
 </head>
 

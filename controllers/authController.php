@@ -75,6 +75,7 @@ if (isset($_POST['signup-btn'])) {
       $_SESSION['username'] = $username;
       $_SESSION['email'] = $email;
       $_SESSION['verified'] = $verified;
+      $_SESSION['token'] = $token;
 
       sendVerificationEmail($email, $token);
 
@@ -116,6 +117,9 @@ if (isset($_POST['login-btn'])) {
     $_SESSION['username'] = $user['username'];
     $_SESSION['email'] = $user['email'];
     $_SESSION['verified'] = $user['verified'];
+    $_SESSION['token'] = $user['token'];
+    $_SESSION['resent'] = 0;
+
     //set flash message
     $_SESSION['message'] = "You are now logged in.";
     $_SESSION['alert-class'] = "alert-success";
@@ -137,6 +141,8 @@ if (isset($_GET['logout'])) {
   unset($_SESSION['username']);
   unset($_SESSION['email']);
   unset($_SESSION['verified']);
+  unset($_SESSION['token']);
+  $_SESSION['resent'];
   header('location: login.php');
   exit();
 }
@@ -213,6 +219,21 @@ if (isset($_POST['invite-btn'])) {
    }
   }
 }
+
+
+//if user clicks on the resend verification email button
+if (isset($_POST['resend-btn'])) {
+
+  $email = $_SESSION['email'];
+  $token = $_SESSION['token'];
+
+  sendVerificationEmail($email, $token);
+
+  $_SESSION['resent'] = 1;
+  header('location: index.php');
+  exit();
+} 
+
 
 
 //verify the invite token to access registration
