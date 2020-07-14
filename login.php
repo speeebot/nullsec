@@ -15,17 +15,12 @@ if (isset($_SESSION['id'])) {
 </head>
 
 <body>
-<h2 class="username">
- &nbsp; <!-- add space above logo -->
-</h2>
-
 <!-- container for logo and everything below -->
 <div class="container">
   <div class="header"> <!-- header includes logo and navigation row with nav links -->
-    <a href="login.php" class="logo">
+    <a href="front.php" class="logo">
       <img src="img/nullsecNew_title.jpg">
     </a>
-    <br><br><br>
   </div>
 
   <form class="form" action="login.php" method="post">

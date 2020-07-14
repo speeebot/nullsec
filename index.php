@@ -9,7 +9,7 @@ if (isset($_GET['token'])) {
 }
 
 if (!isset($_SESSION['id'])) {
-  header('location: login.php');
+  header('location: front.php');
   exit();
 }
 
