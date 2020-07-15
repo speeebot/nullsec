@@ -39,8 +39,7 @@ if (!isset($_SESSION['id'])) {
         <img src="img/nullsecNew_title.jpg">
       </a>
       <div class="navigation">
-        <a class="nav-link" href="index.php">Front</a>
-        <a class="nav-link" href="media.php">Media</a>
+        <a class="nav-link-grey" href="front.php">Front</a>
         <a class="nav-link" href="info.php">Info</a>
         <a class="nav-link" href="downloads.php">Downloads</a>
         <?php if($_SESSION['verified'] == 1):?>

@@ -33,8 +33,7 @@ if (!isset($_SESSION['id'])) {
       </a>
 
       <div class="navigation">
-        <a class="nav-link" href="index.php">Front</a>
-        <a class="nav-link" href="media.php">Media</a>
+        <a class="nav-link-grey" href="front.php">Front</a>
         <a class="nav-link" href="info.php">Info</a>
         <a class="nav-link" href="downloads.php">Downloads</a>
         <?php if($_SESSION['verified'] == 1):?>
@@ -69,11 +68,11 @@ if (!isset($_SESSION['id'])) {
         <?php endif; ?>
     </div>
 
-  <li class="list">
+  <ul class="list">
     <a href="uploads/speee 2019.7z">Config</a>
     <a href="">...</a>
     <a href="">...</a>
-</li>
+  </ul>
 </div>
 
 </body>

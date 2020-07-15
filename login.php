@@ -22,6 +22,11 @@ if (isset($_SESSION['id'])) {
       <img src="img/nullsecNew_title.jpg">
     </a>
   </div>
+  <div class="navigation">
+      <a class="nav-link-grey" href="who.php">Who</a>
+      <a class="nav-link-grey" href="media.php">Media</a>
+      <a class="nav-link-red" href="login.php">Members</a>
+  </div>
 
   <form class="form" action="login.php" method="post">
     <div class="form-group">

@@ -1,9 +1,9 @@
 <?php require_once 'controllers/authController.php'; 
 
-if (isset($_SESSION['id'])) {
+/* if (isset($_SESSION['id'])) {
   header('location: index.php');
   exit();
-}
+} */
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,9 @@ if (isset($_SESSION['id'])) {
     </a>
   </div>
     <div class="navigation">
-        <a class="nav-link" href="login.php">Login</a>
+      <a class="nav-link-grey" href="who.php">Who</a>
+      <a class="nav-link-grey" href="media.php">Media</a>
+      <a class="nav-link" href="login.php">Members</a>
     </div>
 </div>
 

@@ -44,9 +44,20 @@ h2.status-verified {
 }
 
 .navigation {
+  
 }
 .nav-link {
   color: white;
+  text-decoration: none;
+  margin: 20px;
+}
+a.nav-link-grey {
+  color:grey;
+  text-decoration: none;
+  margin: 20px;
+}
+a.nav-link-red {
+  color:red;
   text-decoration: none;
   margin: 20px;
 }
@@ -60,20 +71,25 @@ h2.status-verified {
   color: white;
 }
 
-/* Downloads */
+/* Lists */
 
-.list {
-  text-align: center;
+ul.list {
   list-style: none;
+  margin: 100px;
+  width: 20px;
 }
-.list a {
+ul.list a{
   color: white;
   text-decoration: none;
-  margin: 50px;
-  display: block;
+  padding: 15px;
+  display: inline-block;
 }
+/* ul.list-who {
+  color: white;
+  text-decoration: none;
+} */
 
-/* forms */
+/* Forms */
 
 .form {
   color: white;
@@ -111,4 +127,7 @@ h2.status-verified {
 .info a {
   color: white;
   text-decoration: none;
+}
+.media-vid {
+  margin: 50px;
 }
