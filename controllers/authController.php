@@ -143,7 +143,7 @@ if (isset($_GET['logout'])) {
   unset($_SESSION['verified']);
   unset($_SESSION['token']);
   $_SESSION['resent'];
-  header('location: login.php');
+  header('location: front.php');
   exit();
 }
 
