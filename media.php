@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NULLSEC.gg</title>
+    <title>Media :: NULLSEC.gg</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,6 +24,11 @@
       <a class="nav-link" href="login.php">Members</a>
     </div>
     <div class="media">
+      <div class="media-vid">
+        <iframe width="640" height="360"
+            src="https://www.youtube.com/embed/we47q1VRFvk" frameborder="0" allowfullscreen>
+        </iframe> 
+      </div>
       <div class="media-vid">
         <iframe width="640" height="360"
             src="https://www.youtube.com/embed/MXcdCz5k4co" frameborder="0" allowfullscreen> 

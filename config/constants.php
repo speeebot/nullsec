@@ -1,7 +1,7 @@
 <?php
 
 define('EMAIL', 'noreply@nullsec.gg');
-define('PASSWORD', 'Jp@BUukoq$B96P');
+define('PASSWORD', '{k${Gf2)24%h');
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');

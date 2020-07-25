@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NULLSEC.gg</title>
+    <title>Who :: NULLSEC.gg</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -37,6 +37,9 @@
       <a class="list-who" target="_blank" href="https://www.youtube.com/channel/UCcOZ9PRd4cWF7fJShfpEGgA">Cerviel</a>
       <a class="list-who" target="_blank">Pumpster</a>
       <a class="list-who" target="_blank">Suga</a>
+      <a class="list-who" target="_blank" href="https://www.twitch.tv/prolix_tv">Prolix</a>
+      <a class="list-who" target="_blank">Kacey</a>
+      <a class="list-who" target="_blank">revealed</a>
     </ul>
 </div>
 

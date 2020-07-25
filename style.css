@@ -9,7 +9,7 @@ body {
   text-align: center;
 }
 .header {
-  /* display: inline; */
+  position: relative;
 }
 .logo {
   display: inline-block;
@@ -93,7 +93,12 @@ ul.list a{
 
 .form {
   color: white;
-  margin: 150px;
+  position: absolute;
+  width:400px;
+  right: 0;
+  left: 0;
+  top: 30%;
+  margin: auto;
 }
 .form-group {
   display: inline-block;
@@ -130,4 +135,11 @@ ul.list a{
 }
 .media-vid {
   margin: 50px;
+}
+.login-motto {
+  display: inline-block;
+  //text-align: center;
+  color: grey;
+  margin: 250px; //position relative to the container?
+  position: relative;
 }

@@ -38,7 +38,7 @@ if (!isset($_SESSION['id'])) {
         <?php if($_SESSION['verified'] == 1):?>
           <a class="nav-link" href="invite.php" title="Do not invite fuckheads please.">Invite</a>
         <?php endif; ?>
-        <a class="nav-link" href="https://forums.nullsec.gg/">Forums</a>
+        <a class="nav-link" href="index.php">Forums</a>
         <a class="nav-link" href="index.php?logout=1">Logout</a>
       </div>
     </div>
