@@ -15,18 +15,20 @@ if (!isset($_SESSION['id'])) {
   <title>Downloads :: NULLSEC.gg</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-- username tag -->
-<div class="status">
-  <h2 class="status-username">
-    <?php echo $_SESSION['username']; 
-      if ($_SESSION['verified']): ?>
-        <h2 class="status-verified">VERIFIED</h2>
-    <?php endif; ?>
-  </h2>
-</div>
-<!-- container for logo and everything below -->
-<div class="container">
+  <!-- username tag -->
+  <div class="status">
+    <h2 class="status-username">
+      <?php echo $_SESSION['username']; 
+        if ($_SESSION['verified']): ?>
+          <h2 class="status-verified">VERIFIED</h2>
+      <?php endif; ?>
+    </h2>
+  </div>
+
+  <!-- container for logo and everything below -->
+  <div class="container">
     <div class="header"> <!-- header includes logo and navigation row with nav links -->
       <a href="#" class="logo">
         <img src="img/nullsecNew_title.jpg">
@@ -41,39 +43,52 @@ if (!isset($_SESSION['id'])) {
         <?php endif; ?>
         <a class="nav-link" href="index.php">Forums</a>
         <a class="nav-link" href="index.php?logout=1">Logout</a>
-      </div>
+      </div> <!-- end of navigation -->
+    </div> <!-- end of header -->
+
+    <div class="alerts">
+      <?php if (isset($_SESSION['message'])): ?>
+        <p class="logged-alert" <?php echo $_SESSION['alert-class']; ?>> 
+          <?php echo $_SESSION['message']; 
+            unset($_SESSION['message']); 
+            unset($_SESSION['alert-class']); ?>
+        </p>
+      <?php endif; ?>
+
+      <?php if (!$_SESSION['verified']): ?>
+        <div class="email-alert">
+          You need to verify your account.
+          An email has been sent to
+          <strong><?php echo $_SESSION['email']; ?></strong>. 
+          <br>
+          <?php if (isset($_SESSION['resent']) && !$_SESSION['resent'] == 1 ): ?>
+            <form class="form" action="index.php" method="post">
+              <button type=submit name="resend-btn">Resend</button>
+            </form>
+          <?php endif; ?>
+        </div> <!-- end of email alert -->
+      <?php endif; ?> <!-- '' -->
+
+    </div> <!-- end of alerts -->
+
+    <div class="list-downloads">
+      <ul>
+        <li><a href="uploads/speee 2019.7z">Config</a></li>
+        <li><a href="">...</a></li>
+        <li><a href="">...</a></li>
+      </ul>
     </div>
 
-      <div class="alerts">
-        <?php if (isset($_SESSION['message'])): ?>
-          <p class="logged-alert" <?php echo $_SESSION['alert-class']; ?>>
-            <?php echo $_SESSION['message'];
-              unset($_SESSION['message']);
-              unset($_SESSION['alert-class']); ?>
-          </p>
-        <?php endif; ?>
+  </div> <!-- end of container -->
 
-        <?php if (!$_SESSION['verified']): ?>
-          <div class="email-alert">
-            You need to verify your account.
-            An email has been sent to 
-            <strong><?php echo $_SESSION['email']; ?></strong>
-            <br>
-            <?php if (isset($_SESSION['resent']) && !$_SESSION['resent'] == 1 ): ?>
-              <form class="form" action="index.php" method="post">
-                <button type=submit name="resend-btn">Resend</button>
-              </form>
-            <?php endif; ?>
-          </div>
-        <?php endif; ?>
+  <footer class="footer">
+    <div class= "footer-icon">
+      <a href="front.php">
+        <img src="img/nullsecSymbol.jpg">
+      </a>
     </div>
-
-  <ul class="list">
-    <a href="uploads/speee 2019.7z">Config</a>
-    <a href="">...</a>
-    <a href="">...</a>
-  </ul>
-</div>
+  </footer>
 
 </body>
+
 </html>

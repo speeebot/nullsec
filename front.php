@@ -15,19 +15,28 @@
 </head>
 
 <body>
-<!-- container for logo and everything below -->
-<div class="container">
-  <div class="header"> <!-- header includes logo and navigation row with nav links -->
-    <a href="#" class="logo">
-      <img src="img/nullsecNew_title.jpg">
-    </a>
-  </div>
-    <div class="navigation">
-      <a class="nav-link-grey" href="who.php">Who</a>
-      <a class="nav-link-grey" href="media.php">Media</a>
-      <a class="nav-link" href="login.php">Members</a>
+  <!-- container for logo and everything below -->
+  <div class="container">
+    <div class="header"> <!-- header includes logo and navigation row with nav links -->
+      <a href="#" class="logo">
+        <img src="img/nullsecNew_title.jpg">
+      </a>
     </div>
-</div>
+      <div class="navigation">
+        <a class="nav-link-grey" href="who.php">Who</a>
+        <a class="nav-link-grey" href="media.php">Media</a>
+        <a class="nav-link" href="login.php">Members</a>
+      </div> <!-- end of navigation -->
+  </div> <!-- end of container -->
+
+  <footer class="footer">
+    <div class= "footer-icon">
+      <a href="front.php">
+        <img src="img/nullsecSymbol.jpg">
+      </a>
+    </div>
+  </footer>
 
 </body>
+
 </html>

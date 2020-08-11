@@ -4,9 +4,14 @@ body {
   background-color: black;
   font-family: "Courier New", Courier, monospace;
   color: white;
+  flex: 1;
 }
 .container {
+  position: relative;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 87vh;
 }
 .header {
   position: relative;
@@ -16,7 +21,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin: 50px 0px;
-  
 }
 
 /* index */
@@ -51,46 +55,94 @@ h2.status-verified {
   text-decoration: none;
   margin: 20px;
 }
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  margin: 20px;
+}
 a.nav-link-grey {
   color:grey;
   text-decoration: none;
   margin: 20px;
+}
+a.nav-link-grey:hover {
+  color:rgba(128, 128, 128, 0.9);
 }
 a.nav-link-red {
   color:red;
   text-decoration: none;
   margin: 20px;
 }
+a.nav-link-red:hover {
+  color: rgba(255, 0, 0, 0.9);
+}
 .alerts {
   margin: 50px;
 }
 .logged-alert {
   color: white;
+  font-size: 75%;
 }
 .email-alert {
   color: white;
+  font-size: 75%;
 }
 
 /* Lists */
 
-ul.list {
+.list-members {
+  width: 100px;
+	margin: 100px auto;
+}
+.list-members ul{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.list-members li{
+  display: block;
+  padding: 5px;
+  float: left;
+}
+.list-members a{
+  text-decoration: none;
+  color: white;
+}
+.list-members a:hover{
+  color: red;
+}
+
+.list-downloads {
+  width: 100px;
+	margin: 0px auto;
+}
+.list-members ul{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.list-downloads li{
+  display: block;
+  padding: 5px;
+  float: left;
+}
+.list-downloads a{
+  text-decoration: none;
+  color: white;
+}
+
+.list { /* generic list */
   list-style: none;
-  margin: 100px;
+  margin-left: auto;
+  margin-right: auto;
   width: 20px;
 }
-ul.list a{
-  color: white;
-  text-decoration: none;
-  padding: 15px;
-  display: inline-block;
-}
-/* ul.list-who {
-  color: white;
-  text-decoration: none;
-} */
 
 /* Forms */
-
+.form-container {
+  position: relative;
+  margin: 50px;
+}
 .form {
   color: white;
   position: absolute;
@@ -114,8 +166,10 @@ ul.list a{
 }
 .form-alerts {
   color: white;
+  font-size: 75%;
   list-style: none;
   text-align: center;
+  margin: 20px;
 }
 .form-alert {
   margin: 5px;
@@ -129,17 +183,34 @@ ul.list a{
   color: white;
   text-decoration: none;
 }
-.info a {
-  color: white;
-  text-decoration: none;
+.info {
+  margin: 0 auto;
+}
+.info p{
+
 }
 .media-vid {
   margin: 50px;
 }
-.login-motto {
+.login-motto p{
   display: inline-block;
-  //text-align: center;
-  color: grey;
-  margin: 250px; //position relative to the container?
   position: relative;
+  color: rgb(46, 46, 46);
+  margin: 125px; /* position relative to container? */
+}
+.footer {
+  position: relative;
+}
+.footer-icon {
+  display: block;
+  position: relative;
+  float: right;
+}
+
+::-moz-selection { 
+  background: rgb(143, 143, 143);
+}
+
+::selection {
+  background: rgb(143, 143, 143);
 }
