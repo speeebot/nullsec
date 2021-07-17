@@ -1,4 +1,4 @@
-# nullsec.gg
+# nullsec website
 TODO:
 * Move backend to Node/Express
 * Fix the stylesheet mess, maybe SASS
