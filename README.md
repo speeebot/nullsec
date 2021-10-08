@@ -1,5 +1,5 @@
 # nullsec website
-TODO:
-* Move backend to Node/Express
-* Fix the stylesheet mess, maybe SASS
-* Get good
+- HTML/CSS for the frontend
+- PHP and MySQL for the backend
+- Uses prepared statements to query the database
+- PHPMailer for sending emails to users
